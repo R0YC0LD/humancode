@@ -187,7 +187,7 @@ export function DecodeScene({ pinA, pinB, labelA, labelB, onDone }: Props) {
   }, [opened]);
 
   return (
-    <div className="scene-root theme-dark" role="dialog" aria-modal="true" aria-label="Kod çözülüyor">
+    <div className="scene-root" role="dialog" aria-modal="true" aria-label="Kod çözülüyor">
       {!reduce && (
         <div style={{ position: "absolute", inset: 0, opacity: opening ? 1 - clamp01((t - tl.openAt) / (tl.total - tl.openAt)) * 0.6 : 1 }}>
           <MatrixRain control={rain} />
@@ -207,7 +207,7 @@ export function DecodeScene({ pinA, pinB, labelA, labelB, onDone }: Props) {
         <div
           style={{
             width: pair ? "min(96vw, 1100px)" : "min(92vw, 640px)",
-            filter: ca > 0 ? `drop-shadow(${1.6 * ca}px 0 rgba(255,0,60,0.45)) drop-shadow(${-1.6 * ca}px 0 rgba(0,220,255,0.35))` : undefined,
+            filter: ca > 0 ? `drop-shadow(${1.6 * ca}px 0 rgba(199,47,72,0.35)) drop-shadow(${-1.6 * ca}px 0 rgba(46,31,42,0.2))` : undefined,
           }}
         >
           {!pair ? (

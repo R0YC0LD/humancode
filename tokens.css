@@ -1,7 +1,6 @@
 /*
  * HumanCODE tokenları.
- *  - Varsayılan tema: sıcak krem/pembe, açık (logodaki kırmızı ve siyahla uyumlu).
- *  - .theme-dark: yalnızca kod çözme (Matrix) sahnesi için koyu palet.
+ *  - Tek tema: sıcak krem/pembe, açık (logodaki kırmızı ve siyahla uyumlu); Matrix kod çözme sahnesi de aynı paleti kullanır.
  *  - Kontrast: metin ve vurgu renkleri krem zeminde WCAG AA (≥ 4.5:1) olacak şekilde seçildi.
  *  - Başarı/uyarı: açık zeminde okunur koyu tonlar (#17803a, #9a5b00).
  */
@@ -41,26 +40,6 @@
   --hc-dur-normal: 300ms;
   --hc-dur-scene: 600ms;
   --hc-ease: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Koyu sahne (Matrix kod çözme): iç öğeler aynı jetonları kullanır, renkler burada değişir. */
-.theme-dark {
-  --hc-bg: #000000;
-  --hc-surface: #111111;
-  --hc-surface-2: #1a1a1a;
-  --hc-border: #222222;
-  --hc-border-strong: rgba(255, 255, 255, 0.3);
-  --hc-text: #ffffff;
-  --hc-text-2: #dddddd;
-  --hc-muted: #bbbbbb;
-  --hc-accent: #ff5f56;
-  --hc-accent-deep: #d11210;
-  --hc-on-accent: #000000;
-  --hc-accent-soft: rgba(255, 95, 86, 0.09);
-  --hc-success: #27c93f;
-  --hc-warn: #ffbd2e;
-  --hc-radius: 2px;
-  color-scheme: dark;
 }
 
 @media (max-width: 1024px) {

@@ -57,9 +57,10 @@ export function MatrixRain({ control, speed = 1, alpha = 1, className, startTier
     const slow: number[] = [];
     let last = performance.now();
 
-    const styles = getComputedStyle(document.documentElement);
-    const accent = styles.getPropertyValue("--hc-accent").trim() || "#ff5f56";
-    const bg = "0,0,0";
+    // Renkler, tuvalin bulunduğu temadan (açık/koyu) okunur.
+    const styles = getComputedStyle(canvas);
+    const accent = styles.getPropertyValue("--hc-accent").trim() || "#c72f48";
+    const ink = hexRgb(styles.getPropertyValue("--hc-text"), "46,31,42");
     const monoVar = styles.getPropertyValue("--font-jbmono").trim();
     const family = `${monoVar ? monoVar + ", " : ""}ui-monospace, monospace`;
 
@@ -70,13 +71,12 @@ export function MatrixRain({ control, speed = 1, alpha = 1, className, startTier
       canvas.width = Math.max(1, Math.floor(w * dpr));
       canvas.height = Math.max(1, Math.floor(h * dpr));
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      ctx.fillStyle = `rgb(${bg})`;
-      ctx.fillRect(0, 0, w, h);
+      ctx.clearRect(0, 0, w, h);
       const mobile = w < 640;
       font = mobile ? 18 : 16;
       const n = Math.ceil(w / font);
       cols = Array.from({ length: n }, () => ({
-        y: Math.random() * -60,
+        y: Math.random() * -30,
         v: 0.35 + Math.random() * 0.9,
       }));
       // ~her 9. sütun canlı sayaç sütunu (kalite kademesinde çizilen sütunlarla çakışsın diye step'e hizalı)
@@ -103,8 +103,11 @@ export function MatrixRain({ control, speed = 1, alpha = 1, className, startTier
       const step = tier === 0 ? 1 : tier === 1 ? 2 : 3; // her step'inci kolon çizilir
 
       const { speed: sp, alpha: al, gather } = ctl.current;
-      ctx.fillStyle = `rgba(${bg},${0.08 + (tier > 0 ? 0.04 : 0)})`;
+      // İz solması: tuvali şeffaflığa doğru siler (açık zeminde renk artığı bırakmaz)
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.fillStyle = `rgba(0,0,0,${0.1 + (tier > 0 ? 0.04 : 0)})`;
       ctx.fillRect(0, 0, w, h);
+      ctx.globalCompositeOperation = "source-over";
       ctx.font = `${font}px ${family}`;
       ctx.textAlign = "center";
 
@@ -131,10 +134,10 @@ export function MatrixRain({ control, speed = 1, alpha = 1, className, startTier
           ctx.font = `700 ${Math.round(font * 1.3)}px ${family}`;
           ctx.fillStyle = hexA(accent, Math.min(1, 1.0 * al + 0.2));
           ctx.shadowColor = accent;
-          ctx.shadowBlur = 10;
+          ctx.shadowBlur = 8;
           ctx.fillText(live[((idx % live.length) + live.length) % live.length], x, y);
           ctx.shadowBlur = 0;
-          ctx.fillStyle = `rgba(255,255,255,${0.55 * al})`;
+          ctx.fillStyle = `rgba(${ink},${0.55 * al})`;
           const j = idx - 1;
           ctx.fillText(live[((j % live.length) + live.length) % live.length], x, y - font * 1.3);
           ctx.font = `${font}px ${family}`;
@@ -142,7 +145,7 @@ export function MatrixRain({ control, speed = 1, alpha = 1, className, startTier
         }
         const g = GLYPHS[(Math.random() * GLYPHS.length) | 0];
         // parlak baş
-        ctx.fillStyle = `rgba(255,255,255,${0.9 * al})`;
+        ctx.fillStyle = `rgba(${ink},${0.9 * al})`;
         ctx.fillText(g, x, y);
         // önceki karakter accent renkte
         ctx.fillStyle = hexA(accent, 0.75 * al);
@@ -189,9 +192,17 @@ export function MatrixRain({ control, speed = 1, alpha = 1, className, startTier
   return <canvas ref={ref} className={className} aria-hidden="true" />;
 }
 
+/** "#rrggbb" → "r,g,b" (geçersizse yedek değer). */
+function hexRgb(hex: string, fallback: string): string {
+  const m = /^#?([0-9a-f]{6})$/i.exec(hex.trim());
+  if (!m) return fallback;
+  const n = parseInt(m[1], 16);
+  return `${(n >> 16) & 255},${(n >> 8) & 255},${n & 255}`;
+}
+
 function hexA(hex: string, a: number): string {
   const m = /^#?([0-9a-f]{6})$/i.exec(hex);
-  if (!m) return `rgba(255,95,86,${a})`;
+  if (!m) return `rgba(199,47,72,${a})`;
   const n = parseInt(m[1], 16);
   return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`;
 }

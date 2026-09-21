@@ -48,8 +48,9 @@ export function GuideNav() {
                 placeItems: "center",
                 width: 34,
                 height: 34,
+                borderRadius: 10,
                 border: `1px solid ${path === `/rehber/rakam/${d.n}` ? "var(--hc-accent)" : "var(--hc-border-strong)"}`,
-                color: path === `/rehber/rakam/${d.n}` ? "var(--hc-accent)" : "var(--hc-text)",
+                color: path === `/rehber/rakam/${d.n}` ? "var(--hc-accent-deep)" : "var(--hc-text)",
               }}
             >
               {d.n}
