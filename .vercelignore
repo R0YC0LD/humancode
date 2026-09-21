@@ -1,0 +1,8 @@
+# Vercel yayını .gitignore yerine bunu kullanır: ses dosyaları depoda yok ama yayında olmalı.
+.git
+node_modules
+.next
+.env*
+_reference
+docs
+.claude

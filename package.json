@@ -1,0 +1,35 @@
+{
+  "name": "humancode",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.8.0",
+    "@vercel/functions": "^3.9.8",
+    "framer-motion": "^13.4.0",
+    "next": "16.3.5",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^24.13.6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.5",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^5.0.1"
+  },
+  "description": "HumanCODE - a birth-date numerology decoder and compatibility web app (Turkish UI). Proprietary, all rights reserved.",
+  "author": "Onur Teryakioğlu",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://humanpin.vercel.app"
+}

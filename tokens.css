@@ -1,0 +1,44 @@
+/*
+ * HumanCODE tokenları.
+ * Kaynak: _reference/index.html (Abduzeedo) içindeki :root ve [data-theme=dark] değerleri.
+ *  - Yüzey/kenarlık/metin: referansın koyu teması (#000, #111, #1a1a1a, #222, #ddd, #bbb)
+ *  - Vurgu: referanstaki tek renk vurgusu #d11210; siyah üstünde okunurluk için açık tonu türetildi
+ *  - Başarı/uyarı: referanstaki #27c93f ve #ffbd2e
+ *  - Aralık/ritim: --spacing-main 24px (mobil 16px), --top-spacing 128px, --header-height 72px, taban 14px
+ */
+:root {
+  --hc-bg: #000000;
+  --hc-surface: #111111;
+  --hc-surface-2: #1a1a1a;
+  --hc-border: #222222;
+  --hc-border-strong: rgba(255, 255, 255, 0.3);
+  --hc-text: #ffffff;
+  --hc-text-2: #dddddd;
+  --hc-muted: #bbbbbb;
+
+  --hc-accent: #ff5f56;
+  --hc-accent-deep: #d11210;
+  --hc-success: #27c93f;
+  --hc-warn: #ffbd2e;
+  --hc-danger: #d11210;
+
+  --hc-space: 24px;
+  --hc-top: 128px;
+  --hc-header-h: 72px;
+  --hc-font-size: 14px;
+  --hc-big-title: 72px;
+  --hc-radius: 2px;
+
+  --hc-dur-fast: 150ms;
+  --hc-dur-normal: 300ms;
+  --hc-dur-scene: 600ms;
+  --hc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --hc-space: 16px;
+    --hc-top: 112px;
+    --hc-big-title: 44px;
+  }
+}

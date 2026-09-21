@@ -1,0 +1,75 @@
+HUMANCODE PROPRIETARY LICENSE
+Copyright (c) 2026 Onur Teryakioğlu. All rights reserved.
+
+Turkish translation: see LICENSE.tr.md. Both texts are binding; if they differ,
+the Turkish text prevails for interpretation.
+
+1. OWNERSHIP
+   HumanCODE (the "Work") - including its source code, website, design, graphics,
+   sounds created for it, documentation, all interpretive and editorial texts,
+   the name "HumanCODE" and its logo - is the exclusive property of
+   Onur Teryakioğlu (the "Owner"), except for the third-party components listed
+   in THIRD_PARTY_NOTICES.md, which remain under their own licenses.
+   The Work is protected by the Turkish Law on Intellectual and Artistic Works
+   (No. 5846), the Berne Convention and other applicable copyright laws.
+
+2. WHAT YOU MAY DO
+   a) Use the public HumanCODE website as an end user.
+   b) Read this repository's source code, if you were given access to it,
+      solely for personal, non-commercial evaluation and study.
+   No other right is granted. Access to the repository, a fork made through
+   GitHub's platform features, or a downloaded copy does NOT grant a license.
+
+3. WHAT YOU MAY NOT DO WITHOUT THE OWNER'S PRIOR WRITTEN PERMISSION
+   You may not, in whole or in part:
+   a) copy, reproduce, mirror, or host the Work (publicly or privately);
+   b) modify, adapt, translate, or create derivative works;
+   c) distribute, publish, sublicense, sell, rent, lease, or lend the Work;
+   d) use the Work, or anything derived from it, for any commercial purpose;
+   e) present the Work, or any part of it, as your own or as a product of a
+      third party, or remove or alter any copyright or attribution notice;
+   f) use the name "HumanCODE" or its logo, or any confusingly similar name or
+      logo, for any product or service;
+   g) use the source code, texts or design to train, fine-tune, or evaluate
+      machine-learning or AI models, or to build datasets;
+   h) circumvent any technical or organizational measure protecting the Work.
+
+4. NO CONTRIBUTIONS
+   The Owner does not accept code or content contributions. Anything submitted
+   to the Owner may be used by the Owner without restriction or compensation.
+
+5. TERMINATION
+   Any breach automatically terminates the permissions in Section 2. The Owner
+   may enforce all rights and remedies available under law, including
+   injunctive relief and compensation.
+
+6. THIRD-PARTY COMPONENTS
+   Open-source dependencies, fonts and other third-party materials used by the
+   Work are covered by their own licenses (see THIRD_PARTY_NOTICES.md). This
+   license does not claim ownership of them and does not restrict rights you
+   have under those licenses.
+
+7. NOTICE ON CONTENT
+   Interpretations produced by the Work are based on numerology. They are not
+   scientific, medical, legal, financial or psychological advice or a
+   scientific personality or compatibility test. They are provided for
+   entertainment and self-reflection.
+
+8. DISCLAIMER OF WARRANTY AND LIABILITY
+   THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED. IN NO EVENT SHALL THE OWNER BE LIABLE FOR ANY CLAIM, DAMAGES OR
+   OTHER LIABILITY ARISING FROM THE USE OF THE WORK, TO THE EXTENT PERMITTED
+   BY LAW.
+
+9. GOVERNING LAW
+   This license is governed by the laws of the Republic of Türkiye. The
+   competent courts and enforcement offices of the Republic of Türkiye have
+   jurisdiction, without prejudice to the Owner's right to seek relief
+   elsewhere.
+
+10. CONTACT / PERMISSIONS
+    Permission requests: contact the Owner through the GitHub profile
+    https://github.com/R0YC0LD
+
+This is a custom license text and is not legal advice. The Owner may
+have it reviewed by a lawyer.
