@@ -200,7 +200,7 @@ export function isMode(v: string | null | undefined): v is Mode {
 
 export const BAND_INFO = {
   yuksek: { ad: "Yüksek sinerji", aralik: "80+", renk: "var(--hc-success)" },
-  uyumlu: { ad: "Uyumlu", aralik: "60–79", renk: "var(--hc-text)" },
+  uyumlu: { ad: "Uyumlu", aralik: "60–79", renk: "var(--hc-accent-deep)" },
   emek: { ad: "Emek ister", aralik: "40–59", renk: "var(--hc-warn)" },
-  zorlayici: { ad: "Zorlayıcı", aralik: "<40", renk: "var(--hc-accent)" },
+  zorlayici: { ad: "Zorlayıcı", aralik: "<40", renk: "#7c3aa8" },
 } as const;

@@ -37,7 +37,7 @@ export function CycleStrip({ birth, today }: { birth: BirthDate; today: Ymd }) {
             aria-current={p.isCurrent ? "true" : undefined}
             style={{
               border: `1px solid ${p.isCurrent ? "var(--hc-accent)" : "var(--hc-border)"}`,
-              background: p.isCurrent ? "rgba(255,95,86,0.08)" : "var(--hc-surface)",
+              background: p.isCurrent ? "var(--hc-accent-soft)" : "var(--hc-surface)",
               padding: "10px 12px",
             }}
           >
@@ -65,7 +65,7 @@ export function CycleStrip({ birth, today }: { birth: BirthDate; today: Ymd }) {
               aria-current={isNow ? "true" : undefined}
               style={{
                 border: `1px solid ${isNow ? "var(--hc-accent)" : "var(--hc-border)"}`,
-                background: isNow ? "rgba(255,95,86,0.08)" : "transparent",
+                background: isNow ? "var(--hc-accent-soft)" : "transparent",
                 padding: "8px 4px",
                 textAlign: "center",
               }}

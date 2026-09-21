@@ -5,16 +5,13 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BirthField } from "./BirthField";
 import { FullNameFields } from "./FullNameFields";
-import { MatrixRain } from "./MatrixRain";
 import { RippleButton } from "./HesaplaClient";
-import { useReducedMotion } from "@/lib/useReducedMotion";
 import { EMPTY_FIELDS, fieldsFromDate, loadSavedBirth, loadSavedName, loadSavedSurname, nameError, saveName, saveSurname, validateFields, type BirthFields } from "@/lib/birthForm";
 import { cleanName } from "@/lib/names";
 import { formatBirth, parseBirth } from "@/lib/numerology";
 
 export function HomeHero() {
   const router = useRouter();
-  const reduce = useReducedMotion();
   const [f, setF] = useState<BirthFields>(EMPTY_FIELDS);
   const [name, setName] = useState("");
   const [sur, setSur] = useState("");
@@ -31,26 +28,18 @@ export function HomeHero() {
   const error = touched && !res.ok ? (res.error ?? "Doğum tarihini gir.") : null;
 
   return (
-    <section style={{ position: "relative", overflow: "hidden", minHeight: "100dvh", display: "flex", alignItems: "center" }} aria-labelledby="hero-title">
-      {!reduce && (
-        <div style={{ position: "absolute", inset: 0, opacity: 0.4, pointerEvents: "none" }}>
-          <MatrixRain speed={0.7} alpha={0.85} className="rain-bg" startTier={1} deferStart />
+    <section className="home-hero" aria-labelledby="hero-title">
+      <div className="home-hero-glow" aria-hidden="true" />
+      <div className="container-hc home-hero-inner">
+        <div className="hero-copy">
+          <div className="hero-kicker"><span>♥</span> Birlikte daha iyi</div>
+          <h1 id="hero-title" className="display">Sizin uyumunuz<br /><em>nasıl?</em></h1>
+          <p className="lead">İki doğum tarihini girin, ilişkinizin güçlü taraflarını birlikte keşfedin.</p>
+          <div className="hero-points" aria-label="Özellikler"><span>♡ Eğlenceli</span><span>✦ Kişisel</span><span>⌁ Sadece size özel</span></div>
         </div>
-      )}
-      <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse at 30% 45%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.85) 100%)" }} />
-      <div className="container-hc" style={{ position: "relative", paddingTop: "var(--hc-top)", paddingBottom: 72 }}>
-        <p className="eyebrow">Her insanın bir kodu var</p>
-        <h1 id="hero-title" className="display" style={{ margin: "16px 0 24px", fontSize: "clamp(52px, 10vw, 128px)" }}>
-          Kodunu
-          <br />
-          <span style={{ color: "var(--hc-accent)" }} className="caret">
-            çöz
-          </span>
-        </h1>
-        <p className="lead" style={{ maxWidth: "52ch", marginBottom: 40 }}>
-          Doğum tarihinden 9 haneli bir kod çıkar. İki kişinin kodunu yan yana koy, hangi alanda anlaştığınızı ve nerede
-          sürtüştüğünüzü hane hane gör. Yapay zeka yok: sabit matematik, yazılmış yorumlar.
-        </p>
+        <div className="compatibility-card">
+          <div className="compatibility-card-head"><div><span className="mini-label">İlk adım</span><h2>Önce seni tanıyalım</h2></div><span className="step-pill">1 / 2</span></div>
+          <p className="card-note">Kendi uyum profilini oluşturmak için bilgilerini gir.</p>
         <form
           noValidate
           onSubmit={(e) => {
@@ -63,12 +52,14 @@ export function HomeHero() {
               router.push(`/hesapla?d=${formatBirth(res.date)}&n=${encodeURIComponent(clean)}&scene=1`);
             }
           }}
-          style={{ maxWidth: 460 }}
+          className="hero-form"
         >
           <FullNameFields id="hero" ad={name} soyad={sur} onAd={setName} onSoyad={setSur} errorAd={touched ? nameError(name) : null} errorSoyad={touched ? nameError(sur) : null} />
           <BirthField id="hero" legend="Doğum tarihin" value={f} onChange={setF} error={error} />
-          <RippleButton type="submit">Kodunu çöz</RippleButton>
+          <RippleButton type="submit">Profilimi oluştur <span aria-hidden="true">→</span></RippleButton>
         </form>
+      </div>
+        <div className="hero-trust"><span className="trust-heart">♥</span><span>Sonuçların sadece senin cihazında hesaplanır.</span></div>
       </div>
     </section>
   );

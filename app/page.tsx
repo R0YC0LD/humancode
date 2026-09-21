@@ -14,37 +14,35 @@ export default function Home() {
     <>
       <HomeHero />
 
-      <section className="container-hc" style={{ paddingTop: 120 }} aria-labelledby="nasil">
+      <section className="container-hc home-section" aria-labelledby="nasil">
         <Reveal>
-          <p className="eyebrow">Sistem</p>
+          <p className="eyebrow">Nasıl çalışıyor?</p>
           <h2 id="nasil" className="h2" style={{ margin: "12px 0 16px" }}>
-            9 hane nasıl çıkar?
+            Uyumunuzu keşfetmek çok kolay.
           </h2>
           <p className="lead" style={{ maxWidth: "62ch", marginBottom: 48 }}>
-            Gün, ay ve yıl üç ayrı haneye indirilir. Kalan altısı bu üçünün toplamlarından türer. Aşağıdaki tarihi değiştir; hesap
-            adım adım yanında görünür.
+            İkinizin doğum tarihinden yola çıkarak ilişkinizin ritmini, güçlü yanlarını ve birbirinizi tamamlama biçiminizi görün.
           </p>
         </Reveal>
         <HowItWorks />
       </section>
 
-      <section className="container-hc" style={{ paddingTop: 120 }} aria-labelledby="iki">
+      <section className="container-hc home-section couple-section" aria-labelledby="iki">
         <Reveal>
-          <p className="eyebrow">Sinerji</p>
+          <p className="eyebrow">Birlikte keşfedin</p>
           <h2 id="iki" className="h2" style={{ margin: "12px 0 16px", maxWidth: "18ch" }}>
-            İki kod yan yana koyulunca
+            Tek başına güzel,<br />birlikte daha anlamlı.
           </h2>
           <p className="lead" style={{ maxWidth: "62ch", marginBottom: 32 }}>
-            İki kişinin haneleri tek tek toplanır ve yeni bir piramit çıkar. Bu piramit, ilk izlenimden ilişkinin ruhuna kadar 8 hayat
-            alanında nerede anlaştığınızı gösterir. Romantik, arkadaşlık, iş ortaklığı ve ebeveyn–çocuk için ayrı yorum.
+            Partnerinin doğum tarihini de ekle; iletişiminizden ortak hayallerinize kadar sizi nelerin yakınlaştırdığını birlikte görün.
           </p>
           <Link href="/karsilastir" className="btn btn-primary">
-            İki kodu karşılaştır
+            Partnerini ekle <span aria-hidden="true">→</span>
           </Link>
         </Reveal>
       </section>
 
-      <section className="container-hc" style={{ paddingTop: 120 }} aria-labelledby="top">
+      <section className="container-hc home-section" aria-labelledby="top">
         <Reveal>
           <p className="eyebrow">Toplist</p>
           <h2 id="top" className="h2" style={{ margin: "12px 0 24px" }}>
@@ -56,7 +54,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container-hc" style={{ paddingTop: 120 }} aria-labelledby="rehber">
+      <section className="container-hc home-section" aria-labelledby="rehber">
         <Reveal>
           <p className="eyebrow">Rehber</p>
           <h2 id="rehber" className="h2" style={{ margin: "12px 0 32px" }}>
@@ -78,7 +76,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container-hc" style={{ paddingTop: 120 }} aria-labelledby="sss">
+      <section className="container-hc home-section faq-section" aria-labelledby="sss">
         <Reveal>
           <p className="eyebrow">SSS</p>
           <h2 id="sss" className="h2" style={{ margin: "12px 0 32px" }}>

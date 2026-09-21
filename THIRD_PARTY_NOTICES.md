@@ -58,9 +58,9 @@ The site works without these files (sounds are skipped silently). / Site bu dosy
 ## Reference design / Referans tasarım
 
 An archived third-party article page was used privately as a visual reference during design (typography scale, dark
-palette, spacing rhythm). No part of it is included in this repository or in the site.
+palette, spacing rhythm). No part of it is included in this repository or in the site. The current interface theme and logo (`public/logo.jpg`) were provided by the Owner.
 Tasarım sırasında üçüncü taraf bir makale sayfası özel olarak görsel referans olarak incelenmiştir (yazı ölçeği, koyu palet,
-boşluk ritmi). Hiçbir parçası bu depoda veya sitede yer almaz.
+boşluk ritmi). Hiçbir parçası bu depoda veya sitede yer almaz. Güncel arayüz temasını ve logoyu (`public/logo.jpg`) Hak Sahibi kendisi sağlamıştır.
 
 ## Research references / Araştırma kaynakları
 

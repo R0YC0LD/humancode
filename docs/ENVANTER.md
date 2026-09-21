@@ -17,7 +17,7 @@ Kaynak: yerel `_reference/index.html` (üçüncü taraf telifli içerik olduğu 
 | `--spacing-main 24px` (mobil 16px), `--top-spacing 128px`, `--header-height 72px`, `--font-size-base 14px`, `--big-title 72px` | `--hc-space`, `--hc-top`, `--hc-header-h`, `--hc-font-size`, `--hc-big-title` |
 | Fontlar: `mundial-hair` (lisanslı, pakette yok), monospace `Fira Code / JetBrains Mono` | Inter (gövde) + JetBrains Mono (rakamlar) |
 
-Referansın açık teması (`#fff` zemin) kullanılmadı; HumanCODE yalnızca koyu.
+> **Güncelleme:** Arayüz sonradan kendi sıcak krem/pembe açık temasına taşındı (`tokens.css` varsayılan `:root`). Yukarıdaki koyu değerler artık yalnızca kod çözme (Matrix) sahnesinde, `.theme-dark` kapsamında kullanılır.
 
 ## 2. Bileşen envanteri
 

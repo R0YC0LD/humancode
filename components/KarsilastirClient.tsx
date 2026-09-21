@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import { BirthField } from "./BirthField";
 import { FullNameFields } from "./FullNameFields";
 import { ShareButton } from "./synergy/ShareButton";
-import { MatrixRain } from "./MatrixRain";
 import { RippleButton } from "./HesaplaClient";
 import { EMPTY_FIELDS, fieldsFromDate, loadSavedBirth, loadSavedName, loadSavedSurname, nameError, saveName, saveSurname, validateFields, type BirthFields } from "@/lib/birthForm";
 import { cleanName } from "@/lib/names";
@@ -161,9 +160,7 @@ export function KarsilastirClient({
 
   return (
     <div style={{ position: "relative", overflow: "hidden" }}>
-      <div style={{ position: "absolute", inset: 0, opacity: 0.16, pointerEvents: "none" }}>
-        <MatrixRain speed={0.6} alpha={0.8} className="rain-bg" />
-      </div>
+      <div className="page-glow" aria-hidden="true" />
       <div className="container-hc page-top" style={{ position: "relative", paddingBottom: 96, minHeight: "70dvh" }}>
         <p className="eyebrow">Sinerji Çözümü</p>
         <h1 className="display" style={{ margin: "14px 0 20px" }}>

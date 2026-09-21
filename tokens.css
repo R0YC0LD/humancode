@@ -1,12 +1,50 @@
 /*
  * HumanCODE tokenları.
- * Kaynak: _reference/index.html (Abduzeedo) içindeki :root ve [data-theme=dark] değerleri.
- *  - Yüzey/kenarlık/metin: referansın koyu teması (#000, #111, #1a1a1a, #222, #ddd, #bbb)
- *  - Vurgu: referanstaki tek renk vurgusu #d11210; siyah üstünde okunurluk için açık tonu türetildi
- *  - Başarı/uyarı: referanstaki #27c93f ve #ffbd2e
- *  - Aralık/ritim: --spacing-main 24px (mobil 16px), --top-spacing 128px, --header-height 72px, taban 14px
+ *  - Varsayılan tema: sıcak krem/pembe, açık (logodaki kırmızı ve siyahla uyumlu).
+ *  - .theme-dark: yalnızca kod çözme (Matrix) sahnesi için koyu palet.
+ *  - Kontrast: metin ve vurgu renkleri krem zeminde WCAG AA (≥ 4.5:1) olacak şekilde seçildi.
+ *  - Başarı/uyarı: açık zeminde okunur koyu tonlar (#17803a, #9a5b00).
  */
 :root {
+  --hc-bg: #fffaf7;
+  --hc-surface: #ffffff;
+  --hc-surface-2: #fff1ec;
+  --hc-border: #f2ddd6;
+  --hc-border-strong: #e3b3a6;
+  --hc-text: #2e1f2a;
+  --hc-text-2: #66535b;
+  --hc-muted: #7f6a72;
+
+  --hc-accent: #c72f48;
+  --hc-accent-deep: #c02f47;
+  --hc-accent-hover: #a3243b;
+  --hc-on-accent: #ffffff;
+  --hc-accent-soft: rgba(232, 93, 99, 0.1);
+  --hc-glow: rgba(232, 93, 99, 0.16);
+  --hc-success: #17803a;
+  --hc-warn: #9a5b00;
+  --hc-danger: #c02f47;
+
+  --hc-header-bg: rgba(255, 250, 247, 0.9);
+  --hc-panel-bg: linear-gradient(160deg, #fff6f2 0%, #ffece6 100%);
+  --hc-shadow: 0 12px 30px rgba(94, 52, 62, 0.07);
+  --hc-shadow-lg: 0 18px 50px rgba(123, 67, 76, 0.13);
+
+  --hc-space: 24px;
+  --hc-top: 128px;
+  --hc-header-h: 76px;
+  --hc-font-size: 14px;
+  --hc-big-title: 72px;
+  --hc-radius: 18px;
+
+  --hc-dur-fast: 150ms;
+  --hc-dur-normal: 300ms;
+  --hc-dur-scene: 600ms;
+  --hc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Koyu sahne (Matrix kod çözme): iç öğeler aynı jetonları kullanır, renkler burada değişir. */
+.theme-dark {
   --hc-bg: #000000;
   --hc-surface: #111111;
   --hc-surface-2: #1a1a1a;
@@ -15,24 +53,14 @@
   --hc-text: #ffffff;
   --hc-text-2: #dddddd;
   --hc-muted: #bbbbbb;
-
   --hc-accent: #ff5f56;
   --hc-accent-deep: #d11210;
+  --hc-on-accent: #000000;
+  --hc-accent-soft: rgba(255, 95, 86, 0.09);
   --hc-success: #27c93f;
   --hc-warn: #ffbd2e;
-  --hc-danger: #d11210;
-
-  --hc-space: 24px;
-  --hc-top: 128px;
-  --hc-header-h: 72px;
-  --hc-font-size: 14px;
-  --hc-big-title: 72px;
   --hc-radius: 2px;
-
-  --hc-dur-fast: 150ms;
-  --hc-dur-normal: 300ms;
-  --hc-dur-scene: 600ms;
-  --hc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: dark;
 }
 
 @media (max-width: 1024px) {

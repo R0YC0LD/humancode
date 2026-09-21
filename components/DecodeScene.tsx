@@ -187,7 +187,7 @@ export function DecodeScene({ pinA, pinB, labelA, labelB, onDone }: Props) {
   }, [opened]);
 
   return (
-    <div className="scene-root" role="dialog" aria-modal="true" aria-label="Kod çözülüyor">
+    <div className="scene-root theme-dark" role="dialog" aria-modal="true" aria-label="Kod çözülüyor">
       {!reduce && (
         <div style={{ position: "absolute", inset: 0, opacity: opening ? 1 - clamp01((t - tl.openAt) / (tl.total - tl.openAt)) * 0.6 : 1 }}>
           <MatrixRain control={rain} />

@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { setSoundOn, useSoundOn } from "@/lib/soundPref";
@@ -15,8 +16,9 @@ const NAV = [
 
 export function Wordmark({ size = 16 }: { size?: number }) {
   return (
-    <span className="wordmark" style={{ fontSize: size }}>
-      Human<b>CODE</b>
+    <span className="brand-lockup" style={{ fontSize: size }}>
+      <span className="brand-mark"><Image src="/logo.jpg" alt="" aria-hidden="true" width={38} height={38} priority /></span>
+      <span className="wordmark">Human<b>CODE</b></span>
     </span>
   );
 }
@@ -70,7 +72,8 @@ export function Header() {
           onClick={() => setOpen((o) => !o)}
           
         >
-          {open ? "Kapat" : "Menü"}
+          <span className="menu-icon" aria-hidden="true">{open ? "×" : "☰"}</span>
+          <span className="sr-only">{open ? "Menüyü kapat" : "Menüyü aç"}</span>
         </button>
       </div>
 
@@ -84,7 +87,7 @@ export function Header() {
             top: "var(--hc-header-h)",
             left: 0,
             right: 0,
-            background: "rgba(0,0,0,0.96)",
+            background: "var(--hc-bg)", boxShadow: "0 18px 30px rgba(93,51,58,0.08)",
             borderBottom: "1px solid var(--hc-border)",
             padding: "16px var(--hc-space) 24px",
           }}

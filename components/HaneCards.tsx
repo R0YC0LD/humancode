@@ -34,7 +34,7 @@ export function HaneCards({ pin, birth }: { pin: Pin; birth?: BirthDate | null }
                 <strong style={{ color: "var(--hc-text-2)" }}>Bu hane ne anlatır: </strong>
                 {h.olcer}
               </p>
-              <p className="mono" style={{ margin: 0, fontSize: 13, padding: "10px 12px", background: "#000", border: "1px solid var(--hc-border)" }}>
+              <p className="mono" style={{ margin: 0, fontSize: 13, padding: "10px 12px", background: "var(--hc-surface-2)", border: "1px solid var(--hc-border)" }}>
                 {h.formul}
                 {line && (
                   <>

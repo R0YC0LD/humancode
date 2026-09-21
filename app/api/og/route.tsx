@@ -2,11 +2,12 @@
 import { ImageResponse } from "next/og";
 import type { NextRequest } from "next/server";
 import { BAND_INFO } from "@/content/haneler";
+import { LOGO_DATA_URI } from "@/lib/logoData";
 import { computeScore, isConsistentPin, pinFromString, type Pin } from "@/lib/numerology";
 
 const W = 1200;
 const H = 630;
-const ACCENT = "#ff5f56";
+const ACCENT = "#c02f47";
 
 const POS: [number, number][] = [
   [0, 0],
@@ -36,9 +37,10 @@ function Pyr({ pin, x, y, box, count = 9 }: { pin: number[]; x: number; y: numbe
             height: box,
             alignItems: "center",
             justifyContent: "center",
-            background: i === 8 ? "rgba(255,95,86,0.12)" : "#111",
-            border: `2px solid ${i === 8 ? ACCENT : "rgba(255,255,255,0.3)"}`,
-            color: "#fff",
+            background: i === 8 ? "#ffe3e0" : "#ffffff",
+            border: `2px solid ${i === 8 ? ACCENT : "#e3b3a6"}`,
+            borderRadius: 14,
+            color: "#2e1f2a",
             fontSize: box * 0.55,
             fontWeight: 700,
           }}
@@ -52,13 +54,15 @@ function Pyr({ pin, x, y, box, count = 9 }: { pin: number[]; x: number; y: numbe
 
 function Frame({ children, foot }: { children: React.ReactNode; foot: string }) {
   return (
-    <div style={{ display: "flex", position: "relative", width: W, height: H, background: "#000", color: "#fff" }}>
-      <div style={{ display: "flex", position: "absolute", left: 56, top: 44, fontSize: 34, fontWeight: 700, letterSpacing: 6 }}>
+    <div style={{ display: "flex", position: "relative", width: W, height: H, background: "linear-gradient(160deg, #fffaf7 0%, #ffe9e2 100%)", color: "#2e1f2a" }}>
+      <div style={{ display: "flex", alignItems: "center", position: "absolute", left: 56, top: 36, fontSize: 38, fontWeight: 800, letterSpacing: -1 }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={LOGO_DATA_URI} width={64} height={64} alt="" style={{ marginRight: 14, borderRadius: 14 }} />
         <span>Human</span>
         <span style={{ color: ACCENT }}>CODE</span>
       </div>
       {children}
-      <div style={{ display: "flex", position: "absolute", left: 56, bottom: 40, fontSize: 24, color: "#bbb", letterSpacing: 2 }}>{foot}</div>
+      <div style={{ display: "flex", position: "absolute", left: 56, bottom: 40, fontSize: 24, color: "#725f67", letterSpacing: 1 }}>{foot}</div>
     </div>
   );
 }
@@ -79,7 +83,7 @@ export function GET(req: NextRequest) {
           <div style={{ display: "flex", flexDirection: "column", position: "absolute", left: 56, top: 190 }}>
             <div style={{ display: "flex", fontSize: 200, fontWeight: 700, lineHeight: 1 }}>{r.score}</div>
             <div style={{ display: "flex", fontSize: 40, color: ACCENT, marginTop: 8 }}>{band.ad}</div>
-            <div style={{ display: "flex", fontSize: 26, color: "#bbb", marginTop: 28 }}>{`${a.join("")} × ${b.join("")}`}</div>
+            <div style={{ display: "flex", fontSize: 26, color: "#725f67", marginTop: 28 }}>{`${a.join("")} × ${b.join("")}`}</div>
           </div>
         </Frame>
       ),

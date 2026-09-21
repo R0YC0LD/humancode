@@ -35,7 +35,7 @@ export function ModeShell({ initialMode, nav, children }: { initialMode: Mode; n
             aria-checked={mode === m.key}
             className="btn"
             onClick={() => choose(m.key)}
-            style={mode === m.key ? { background: "var(--hc-text)", color: "#000", borderColor: "var(--hc-text)" } : undefined}
+            style={mode === m.key ? { background: "var(--hc-text)", color: "var(--hc-bg)", borderColor: "var(--hc-text)" } : undefined}
           >
             {m.ad}
           </button>

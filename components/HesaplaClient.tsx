@@ -6,7 +6,6 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { BirthField } from "./BirthField";
 import { FullNameFields } from "./FullNameFields";
-import { MatrixRain } from "./MatrixRain";
 import { EMPTY_FIELDS, fieldsFromDate, loadSavedBirth, loadSavedName, loadSavedSurname, nameError, saveBirth, saveName, saveSurname, validateFields, type BirthFields } from "@/lib/birthForm";
 import { cleanName } from "@/lib/names";
 import { computePin, formatBirth, parseBirth, todayYmd, type BirthDate, type Ymd } from "@/lib/numerology";
@@ -88,9 +87,7 @@ export function HesaplaClient({ initialD, initialScene, initialName }: { initial
 
   return (
     <div style={{ position: "relative", overflow: "hidden" }}>
-      <div style={{ position: "absolute", inset: 0, opacity: 0.16, pointerEvents: "none" }}>
-        <MatrixRain speed={0.6} alpha={0.8} className="rain-bg" />
-      </div>
+      <div className="page-glow" aria-hidden="true" />
       <div className="container-hc page-top" style={{ position: "relative", paddingBottom: 96, minHeight: "70dvh" }}>
         <p className="eyebrow">Kod Çözümü</p>
         <h1 className="display" style={{ margin: "14px 0 20px" }}>

@@ -143,7 +143,7 @@ export function PyramidGroup({
               ? "var(--hc-accent)"
               : "var(--hc-border-strong)"
             : "var(--hc-border)";
-        const digitFill = c.flash ? "#000" : c.state === "scramble" ? "var(--hc-muted)" : "var(--hc-text)";
+        const digitFill = c.flash ? "var(--hc-bg)" : c.state === "scramble" ? "var(--hc-muted)" : "var(--hc-text)";
         const body = (
           <>
             {wave !== null && (
@@ -169,7 +169,7 @@ export function PyramidGroup({
                 width={CELL_W}
                 height={CELL_H}
                 rx={2}
-                fill={c.flash ? "#fff" : isLast && c.state === "locked" ? "rgba(255,95,86,0.08)" : "var(--hc-surface)"}
+                fill={c.flash ? "var(--hc-accent)" : isLast && c.state === "locked" ? "var(--hc-accent-soft)" : "var(--hc-surface)"}
                 stroke={stroke}
                 strokeWidth={isSel ? 2 : 1}
                 strokeDasharray={isLast && c.state !== "locked" ? "3 3" : undefined}
